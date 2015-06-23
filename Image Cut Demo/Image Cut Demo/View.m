@@ -23,6 +23,7 @@
     UIImage *image = [UIImage imageNamed:@"me"];
     [image drawAtPoint:CGPointMake(100, 100)];
     
+    
     CGContextFillPath(ctx);
 }
 

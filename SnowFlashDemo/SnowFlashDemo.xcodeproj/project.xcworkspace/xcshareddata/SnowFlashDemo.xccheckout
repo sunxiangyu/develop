@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>70ACB326-9309-452C-BBA7-7AECC489EE6E</string>
+	<string>3647E4DA-CD7E-464B-B849-BBFE2D98A253</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Image Cut Demo</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>853984AAAE9F5DD3FC7E92805ABA8CAF8DBF03CE</key>
 		<string>https://github.com/sunxiangyu/develop.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Image Cut Demo/Image Cut Demo.xcodeproj</string>
+	<string>SnowFlashDemo/SnowFlashDemo.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>853984AAAE9F5DD3FC7E92805ABA8CAF8DBF03CE</key>
