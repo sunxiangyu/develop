@@ -17,8 +17,13 @@
 
 @property (weak, nonatomic) IBOutlet UIProgressView *progressView;
 
+@property(nonatomic, strong) NSURLConnection *conn;
+
 
 @property(nonatomic, strong) NSFileHandle *handler;
+
+- (IBAction)download:(UIButton *)sender;
+
 
 @end
 
@@ -49,6 +54,8 @@
 
 -(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
+    if (self.currentLength) return;
+    
     NSString *caches = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
     NSString *filepath = [caches stringByAppendingPathComponent:@"videos.zip"];
     NSLog(@"%@", filepath);
@@ -84,4 +91,22 @@
 
 
 
+- (IBAction)download:(UIButton *)sender {
+    
+    sender.selected = !sender.isSelected;
+    
+    if (sender.isSelected) {
+        NSURL *url = [NSURL URLWithString:@"http://localhost:8080/MJServer/resources/videos.zip"];
+        
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        
+        NSString *range = [NSString stringWithFormat:@"bytes=%lld-", self.currentLength];
+        [request setValue:range forHTTPHeaderField:@"Range"];
+        
+        self.conn = [NSURLConnection connectionWithRequest:request delegate:self];
+    } else {
+        [self.conn cancel];
+        self.conn = nil;
+    }
+}
 @end

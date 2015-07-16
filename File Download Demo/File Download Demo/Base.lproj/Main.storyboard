@@ -22,8 +22,31 @@
                                     <rect key="frame" x="125" y="171" width="150" height="2"/>
                                 </variation>
                             </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRb-p7-Of5">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" backgroundImage="start">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" backgroundImage="pause"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="160" y="234" width="80" height="80"/>
+                                </variation>
+                                <connections>
+                                    <action selector="download:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Lcf-3P-WWd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="KRb-p7-Of5"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="KRb-p7-Of5"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="progressView" destination="SQW-0l-Rch" id="tro-tH-Deb"/>
@@ -33,4 +56,8 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="pause" width="96" height="96"/>
+        <image name="start" width="96" height="96"/>
+    </resources>
 </document>
